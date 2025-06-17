@@ -131,7 +131,7 @@
                     this.getData();
                 })
                 .catch(err => {
-                    alert(`Gagal: Terjadi masalah saat penghapusan`)
+                    alert(`Gagal: ${err.message}`)
                 })
             },
             getData() {
