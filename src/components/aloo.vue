@@ -98,7 +98,7 @@
 <script>
     export default{
         mounted() {
-            fetch('http://localhost:8000/get')
+            fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/get')
             .then(res => res.json())
             .then(data => {
                 this.user = data;
@@ -109,12 +109,12 @@
         },
         methods: {
             deleteUser(id) {
-                fetch('http://localhost:8000/delete', {
+                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/delete', {
                     method: 'DELETE',
                 })
             },
             getData() {
-                fetch('http://localhost:8000/get')
+                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/get')
                 .then(res => res.json())
                 .then(data => {
                     this.user = data;
@@ -133,7 +133,7 @@
                     return
                 }
 
-                fetch('http://localhost:8000/signup', {
+                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
