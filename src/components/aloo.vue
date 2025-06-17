@@ -85,7 +85,7 @@
                 <div v-for="u in user" :key="u.id" class=" w-full bg-black text-white p-3 rounded-md shadow-md mb-2">
                     <div class="flex justify-between items-center">
                         <p class="font-semibold">{{ u.username }}</p>
-                        <button @click="deleteUser(u.id)" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition">Hapus</button>
+                        <button @click="deleteUser(u.id, u.username)" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition">Hapus</button>
                     </div>  
                 </div>
 
@@ -108,7 +108,7 @@
             });
         },
         methods: {
-            deleteUser(id) {
+            deleteUser(id, username) {
                 fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/delete', {
                     method: 'POST',
                     headers: {
