@@ -48,20 +48,20 @@
                 <p class="text-4xl font-bold">Sign In</p>
     
                 <div class="pb-4">
-                    <label for="usernameLogin" class="text-md block">Username</label>
+                    <label for="usernameSignin" class="text-md block">Username</label>
                     <input
                     type="text"
-                    id="usernameLogin"
-                    name="usernameLogin"
+                    id="usernameSignin"
+                    name="usernameSignin"
                     class="text-sm rounded py-1 text-white mb-2 px-2 focus:outline-none bg-black border border-black"
                     placeholder='Your username'
                     required>
         
-                    <label for="passwordLogin" class="text-md block">Password</label>
+                    <label for="passwordSignin" class="text-md block">Password</label>
                     <input
                     type="password"
-                    id="passwordLogin"
-                    name="passwordLogin"
+                    id="passwordSignin"
+                    name="passwordSignin"
                     class="text-sm rounded py-1 text-white mb-2 px-2 focus:outline-none bg-black border border-black"
                     placeholder='Your password'
                     required>
@@ -98,7 +98,7 @@
 <script>
     export default{
         mounted() {
-            fetch(' https://blind-add-hung-assist.trycloudflare.com/get')
+            fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/get')
             .then(res => res.json())
             .then(data => {
                 this.user = data;
@@ -109,7 +109,7 @@
         },
         methods: {
             deleteUser(id, username) {
-                fetch(' https://blind-add-hung-assist.trycloudflare.com/delete', {
+                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/delete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -135,7 +135,7 @@
                 })
             },
             getData() {
-                fetch(' https://blind-add-hung-assist.trycloudflare.com/get')
+                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/get')
                 .then(res => res.json())
                 .then(data => {
                     this.user = data;
@@ -154,7 +154,7 @@
                     return
                 }
 
-                fetch(' https://blind-add-hung-assist.trycloudflare.com/signup', {
+                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -168,6 +168,35 @@
                 .then(res => {
                     if (!res.ok) {
                         return res.json().then(err => { throw new Error(err.detail);});
+                    }
+
+                    return res.json()
+                })
+                .then(data => {
+                    alert(data.msg);
+                    this.getData();
+                })
+                .catch(err => {
+                    alert(`Gagal: ${err.message}`)
+                })
+            },
+            signinUser() {
+                const username = document.getElementById('usernameSignin').value;
+                const password = document.getElementById('passwordSignin').value;
+
+                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                })
+                .then(res => {
+                    if (!res.ok) {
+                        return res.json().then(err => {throw new Error(err.detail);});
                     }
 
                     return res.json()
