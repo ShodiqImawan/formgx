@@ -98,7 +98,7 @@
 <script>
     export default{
         mounted() {
-            fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/get')
+            fetch('https://teacher-audit-stadium-trips.trycloudflare.com/get')
             .then(res => res.json())
             .then(data => {
                 this.user = data;
@@ -109,7 +109,7 @@
         },
         methods: {
             deleteUser(id, username) {
-                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/delete', {
+                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/delete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -135,7 +135,7 @@
                 })
             },
             getData() {
-                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/get')
+                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/get')
                 .then(res => res.json())
                 .then(data => {
                     this.user = data;
@@ -154,7 +154,7 @@
                     return
                 }
 
-                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/signup', {
+                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -184,7 +184,7 @@
                 const username = document.getElementById('usernameSignin').value;
                 const password = document.getElementById('passwordSignin').value;
 
-                fetch('https://portugal-extent-merge-treasurer.trycloudflare.com/signin', {
+                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/signin', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
