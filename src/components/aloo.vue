@@ -98,7 +98,7 @@
 <script>
     export default{
         mounted() {
-            fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/get')
+            fetch(' https://blind-add-hung-assist.trycloudflare.com/get')
             .then(res => res.json())
             .then(data => {
                 this.user = data;
@@ -109,7 +109,7 @@
         },
         methods: {
             deleteUser(id, username) {
-                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/delete', {
+                fetch(' https://blind-add-hung-assist.trycloudflare.com/delete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -135,7 +135,7 @@
                 })
             },
             getData() {
-                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/get')
+                fetch(' https://blind-add-hung-assist.trycloudflare.com/get')
                 .then(res => res.json())
                 .then(data => {
                     this.user = data;
@@ -154,7 +154,7 @@
                     return
                 }
 
-                fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/signup', {
+                fetch(' https://blind-add-hung-assist.trycloudflare.com/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
