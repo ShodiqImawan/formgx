@@ -110,7 +110,28 @@
         methods: {
             deleteUser(id) {
                 fetch('https://asbestos-bangkok-register-supported.trycloudflare.com/delete', {
-                    method: 'DELETE',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: id,
+                        username: username
+                    })
+                })
+                .then(res => {
+                    if (!res.ok) {
+                        return res.json().then(err => {throw new Error(err.detail);});
+                    }
+
+                    return res.json()
+                })
+                .then(data => {
+                    alert(data.msg);
+                    this.getData();
+                })
+                .catch(err => {
+                    alert(`Gagal: Terjadi masalah saat penghapusan`)
                 })
             },
             getData() {
