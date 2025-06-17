@@ -43,7 +43,7 @@
             </form>
     
             <!-- Form Sign In -->
-            <form id="signin" method="POST" class="mt-6 w-full max-w-sm p-6 border border-green-400 shadow-lg rounded-md bg-gradient-to-t from-green-400 to-blue-400 text-black">
+            <form id="signin" @submit.prevent="signinUser" method="POST" class="mt-6 w-full max-w-sm p-6 border border-green-400 shadow-lg rounded-md bg-gradient-to-t from-green-400 to-blue-400 text-black">
                 
                 <p class="text-4xl font-bold">Sign In</p>
     
