@@ -98,7 +98,7 @@
 <script>
     export default{
         mounted() {
-            fetch('https://teacher-audit-stadium-trips.trycloudflare.com/get')
+            fetch('https://simulation-harmful-layer-restore.trycloudflare.com/get')
             .then(res => res.json())
             .then(data => {
                 this.user = data;
@@ -109,7 +109,7 @@
         },
         methods: {
             deleteUser(id, username) {
-                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/delete', {
+                fetch('https://simulation-harmful-layer-restore.trycloudflare.com/delete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -135,7 +135,7 @@
                 })
             },
             getData() {
-                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/get')
+                fetch('https://simulation-harmful-layer-restore.trycloudflare.com/get')
                 .then(res => res.json())
                 .then(data => {
                     this.user = data;
@@ -154,7 +154,7 @@
                     return
                 }
 
-                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/signup', {
+                fetch('https://simulation-harmful-layer-restore.trycloudflare.com/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -184,7 +184,7 @@
                 const username = document.getElementById('usernameSignin').value;
                 const password = document.getElementById('passwordSignin').value;
 
-                fetch('https://teacher-audit-stadium-trips.trycloudflare.com/signin', {
+                fetch('https://simulation-harmful-layer-restore.trycloudflare.com/signin', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
